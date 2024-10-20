@@ -1,0 +1,15 @@
+Front:
+    lastBuild:
+        files:
+            - runtime.dfada933.js
+            - vendors.dfada933.js
+            - index.dfada933.js
+        hash: dfada933
+        watch: false
+        date: '2024-10-20T21:24:33+00:00'
+        pages:
+            - Home.dfada933.js
+            - Progressbar.dfada933.js
+            - Form.dfada933.js
+            - Button.dfada933.js
+            - Index.dfada933.js
