@@ -1,0 +1,38 @@
+# Crazy App
+.cache
+.database
+.trash
+docs/crazyphp
+config/Database.yml
+logs
+
+# Crazy App Build
+# > To comment if you don't want to publish your build app
+public
+config/Front.yml
+
+# Composer dependances (PHP)
+/vendor/
+composer.lock
+
+# Npm dependances (JS)
+node_modules
+package-lock.json
+
+# Git
+.git
+
+# Etc
+.DS_Store
+._*
+
+# PHPUnit (PHP)
+.phpunit.result.cache
+
+# Vscode
+.vscode 
+
+# Docker
+docker
+docker-compose.yml
+config/Docker.yml

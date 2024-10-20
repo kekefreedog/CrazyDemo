@@ -1,0 +1,32 @@
+{
+    "name": "kzarshenas/crazy_demo",
+    "description": "Crazy Php Demo website",
+    "type": "application",
+    "homepage": "https://github.com/kekefreedog/CrazyPHP/",
+    "authors": [
+        {
+            "name": "kzarshenas",
+            "email": "kevin.zarshenas@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": [
+                "app\\/"
+            ]
+        }
+    },
+    "require": {
+        "kzarshenas/crazyphp": "@dev"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./../CrazyPHP",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "devDependencies": []
+}

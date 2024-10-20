@@ -1,0 +1,14 @@
+{
+    "require": {
+        "kzarshenas/crazyphp": "@dev"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./../CrazyPHP",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
+}

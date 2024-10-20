@@ -1,0 +1,108 @@
+# #
+# Head
+#
+# Define default config of head of the Crazy App
+#
+# YAML version 1.2
+#
+# @package    kzarshenas/crazyphp
+# @author     kekefreedog <kevin.zarshenas@gmail.com>
+# @copyright  2022-2024 Kévin Zarshenas
+# #
+Head :
+  main:
+    - tag: meta
+      attributes:
+        charset: 'utf-8'
+    - tag: meta
+      attributes:
+        http-equiv: X-UA-Compatible
+        content: IE=edge
+    - tag: meta
+      attributes:
+        name: viewport
+        content: "width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+    - tag: meta
+      attributes:
+        name: application-name
+        content: '{{App.name}}'
+    - tag: meta
+      attributes:
+        name: application-hash
+        content: '{{Front.lastBuild.hash}}'
+    - tag: meta
+      attributes: 
+        name: application-watch
+        content: '{{Front.lastBuild.watch}}'
+    - tag: meta
+      attributes:
+        name: theme-color
+        content: '#2196f3'
+    - tag: meta
+      attributes:
+        name: description
+        content: '{{App.description}}'
+    - tag: meta
+      attributes:
+        name: robots
+        content: '{{App.indexing}}'
+    - tag: meta
+      attributes:
+        name: googlebot
+        content: '{{App.indexing}}'
+    - tag: meta
+      attributes:
+        name: google
+        content: notranslate
+    - tag: meta
+      attributes:
+        name: rating
+        content: General
+    - tag: link
+      attributes:
+        rel: manifest
+        href: /manifest.json
+    # Favicons
+    - tag: link
+      attributes:
+        rel: apple-touch-icon
+        sizes: 180x180
+        type: image/png
+        href: /asset/favicon/apple-touch-icon.png
+    - tag: link
+      attributes:
+        rel: icon
+        sizes: 32x32
+        type: image/png
+        href: /asset/favicon/favicon-32x32.png
+    - tag: link
+      attributes:
+        rel: icon
+        sizes: 16x16
+        type: image/png
+        href: /asset/favicon/favicon-16x16.png
+    - tag: link
+      attributes:
+        rel: icon
+        href: /asset/favicon/favicon.ico
+    - tag: link
+      attributes:
+        rel: mask-icon
+        href: /asset/favicon/safari-pinned-tab.svg
+        color: '#5bbad5'
+    - tag: meta
+      attributes:
+        name: apple-mobile-web-app-title
+        content: '{{App.name}}'
+    - tag: meta
+      attributes:
+        name: msapplication-TileColor
+        content: '#603cba'
+    - tag: meta
+      attributes:
+        name: msapplication-config
+        content: /asset/favicon/browserconfig.xml
+    - tag: meta
+      attributes:
+        name: theme-color
+        content: "#ffffff"

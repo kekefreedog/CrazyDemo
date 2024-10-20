@@ -1,0 +1,20 @@
+{{!--
+  ! Linear Progress
+  !
+  ! Template of regular button
+  !
+  ! HANDLEBARS.JS version 4.7.7
+  !
+  ! @package    kzarshenas/crazyphp
+  ! @author     kekefreedog <kevin.zarshenas@gmail.com>
+  ! @copyright  2022-2024 Kévin Zarshenas
+  !--}}
+
+{{!-- Div --}}
+<div class="progress{{#if @root.attributes.color-secondary}} {{@root.attributes.color-secondary}}{{/if}}">
+    <div 
+        class="{{#if @root.attributes.indeterminate}}in{{/if}}determinate{{#if @root.attributes.color-primary}} {{@root.attributes.color-primary}}{{/if}}"
+        {{#if @root.attributes.indeterminate}}{{else}}style="width: {{#is @root.attributes.value 0}}0{{else}}{{divide (multiply @root.attributes.value 100) @root.attributes.max}}{{/is}}%"{{/if}}
+    >
+    </div>
+</div>

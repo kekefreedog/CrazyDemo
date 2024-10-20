@@ -1,0 +1,40 @@
+{{!-- Root --}}
+<div id="crazy-root" descriptive-id="" class="screen-fit-min-y screen-flex screen-center dark-mode-blue-grey darken-4-dark-mode light-mode-white">
+
+    {{> preloader_linear_indeterminate}}
+
+    {{> navigation}}
+
+    {{!-- Body --}}
+    <div id="crazy-content" descriptive-id="" class="element-flex-grow-1 pb-5">
+
+        <div class="row container">
+
+            <div class="col s12 m10 row">
+
+                {{!-- Title --}}
+                <div class="col s12">
+                    <h1>Crazy Progress Bar</h1>
+                </div>
+
+                {{!-- Linear Progress --}}
+                <div id="linear-progress" class="section col s6 m6 s12 row scrollspy">
+
+                    {{!-- Regular Btn | Extended --}}
+                    <div class="col s12">
+                        <h5>Linear Progress Bar</h5>
+                    </div>
+
+                    <div class="col s12">
+                        <linear-progress indeterminate="true" value="12" max="100"></linear-progress>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,95 @@
+Api:
+  v2:
+    enable: true
+    prefix: v2
+    enitites:
+      - 
+    routers:
+      - name: ApiV2List # Tested
+        controller: CrazyPHP\Controller\ApiV2List
+        patterns:
+          - list
+        methods:
+          - get
+        middleware : {}
+      - name: ApiV2Batch
+        controller: CrazyPHP\Controller\ApiV2Batch
+        patterns:
+          - batch
+        methods:
+          - post
+          - put # For fix some issues
+          - delete # For fix some issues
+        middleware : {}
+      - name: ApiV2All # Tested
+        controller: CrazyPHP\Controller\ApiV2All
+        patterns:
+          - /[s:entity]/all
+        methods:
+          - get
+        middleware : {} # Tested
+      - name: ApiV2Fields
+        controller: CrazyPHP\Controller\ApiV2Fields
+        patterns:
+          - /[s:entity]/fields
+        methods:
+          - get
+        middleware : {}
+      - name: ApiV2Create
+        controller: CrazyPHP\Controller\ApiV2Create
+        patterns:
+          - /[s:entity]/create
+        methods:
+          - post
+        middleware : {}
+      - name: ApiV2Filter
+        controller: CrazyPHP\Controller\ApiV2Filter
+        patterns:
+          - /[s:entity]/filter
+        methods:
+          - get
+        middleware : {}
+      - name: ApiV2Count # Tested
+        controller: CrazyPHP\Controller\ApiV2Count
+        patterns:
+          - /[s:entity]/count
+        methods:
+          - get
+        middleware : {}
+      - name: ApiV2Id
+        controller: CrazyPHP\Controller\ApiV2Id
+        patterns:
+          - /[s:entity]/[a:id]
+        methods:
+          - get
+        middleware : {}
+      - name: ApiV2Delete
+        controller: CrazyPHP\Controller\ApiV2Delete
+        patterns:
+          - /[s:entity]/delete/[a:id]
+        methods:
+          - delete
+        middleware : {}
+      - name: ApiV2Update
+        controller: CrazyPHP\Controller\ApiV2Update
+        patterns:
+          - /[s:entity]/update/[a:id]
+        methods:
+          - put
+        middleware : {}
+      - name: ApiV2Last # Tested
+        controller: CrazyPHP\Controller\ApiV2Last
+        patterns:
+          - /[s:entity]/last/[i:count]
+        methods:
+          - get
+        middleware : {}
+      - name: ApiV2NewFrom
+        controller: CrazyPHP\Controller\ApiV2NewFrom
+        patterns:
+          - /[s:entity]/new/from/[s:date]
+        methods:
+          - get
+          - option
+          - patch
+        middleware : {}

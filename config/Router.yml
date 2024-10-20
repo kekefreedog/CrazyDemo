@@ -1,0 +1,98 @@
+# #
+# Router
+#
+# Define default config of database of the Crazy App
+#
+# YAML version 1.2
+#
+# @package    kzarshenas/crazyphp
+# @author     kekefreedog <kevin.zarshenas@gmail.com>
+# @copyright  2022-2024 Kévin Zarshenas
+# # 
+Router:
+    app:
+        -
+            name: Index
+            controller: App\Controller\App\Index
+            patterns:
+                - /
+            methods:
+                - get
+            middleware: {  }
+            prefix: false
+        -
+            name: Home
+            controller: App\Controller\App\Home
+            patterns:
+                - /
+            methods:
+                - get
+            middleware: {  }
+        -
+            name: Button
+            methods:
+                - get
+            patterns:
+                - /button
+            controller: App\Controller\App\Button
+        -
+            name: Form
+            methods:
+                - get
+            patterns:
+                - /form
+            controller: App\Controller\App\Form
+        -
+            name: Progressbar
+            methods:
+                - get
+            patterns:
+                - /progressbar
+            controller: App\Controller\App\Progressbar
+    api:
+        -
+            name: Config
+            controller: App\Controller\Api\v1\Config
+            patterns:
+                - /v1/config/
+                - '/v1/config/[s:name]/'
+                - '/v1/config/[s:name]/[a:parameter]'
+            methods:
+                - get
+    asset:
+        -
+            name: Favicon
+            controller: App\Controller\Assets\Favicon
+            patterns:
+                - '/asset/favicon/[s:favicon]'
+                - /favicon.ico
+            methods:
+                - get
+            prefix: false
+            middleware: {  }
+        -
+            name: Manifest
+            controller: App\Controller\Assets\Manifest
+            patterns:
+                - manifest.json
+            methods:
+                - get
+            prefix: false
+    websocket:
+        - null
+    prefix:
+        app: '[a:language]'
+        api: api
+        asset: asset
+        websocket: stream
+    parameters:
+        api:
+            format: json
+    type: {  }
+    methods:
+        - get
+        - post
+        - put
+        - delete
+        - option
+        - patch

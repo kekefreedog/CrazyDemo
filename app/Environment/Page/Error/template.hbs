@@ -1,0 +1,51 @@
+{{!--
+  ! Page Error
+  !
+  ! Template of error plage
+  !
+  ! HANDLEBARS.JS version 4.7.7
+  !
+  ! @package    kzarshenas/crazyphp
+  ! @author     kekefreedog <kevin.zarshenas@gmail.com>
+  ! @copyright  2022-2024 Kévin Zarshenas
+  !--}}
+
+{{!-- Root --}}
+<div id="crazy-root" descriptive-id="" class="carousel carousel-slider {{!-- center --}} screen-fit-min-y">
+
+    {{!-- Static btn --}}
+    <div class="carousel-fixed-item center">
+      <regular-btn 
+        size="small" 
+        type="extended" 
+        icon-text="home" 
+        label="Home" 
+        size="small" 
+        depth="outlined"
+        color-primary="{{errors.[0]._status_code.style.color.text}}"
+        color-secondary="{{errors.[0]._status_code.style.color.fill}}"
+      ></regular-btn>
+    </div>
+
+    {{!-- Iteration of errors --}}
+    {{#each errors as |error|}}
+    <div class="carousel-item {{expandColorFill error._status_code.style.color ""}} white-text row screen-flex screen-center" href="{{@key}}" data-color-fill="{{error._status_code.style.color.fill}}" data-color-text="{{error._status_code.style.color.text}}">
+      <div class="col l3 offset-l5">
+        {{!-- Icon --}}
+        <h1 class="{{expandColorText error._status_code.style.color "text"}}"><regular-btn
+          size="small"
+          color-primary="{{error._status_code.style.color.text}}"
+          color-secondary="{{error._status_code.style.color.fill}}"
+          {{#if error._status_code.style.icon.text}}icon-text="{{error._status_code.style.icon.text}}"{{/if}}
+          {{#if error._status_code.style.icon.class}}icon-class="{{error._status_code.style.icon.class}}"{{/if}}
+          size="large"
+          depth="flat"
+        ></regular-btn>
+        {{error.code}}</h1>
+        <h2 class="{{expandColorText error._status_code.style.color "text"}}">{{error.detail}}</h2>
+        <blockquote class="{{expandColorText error._status_code.style.color "text"}} {{expandColorText error._status_code.style.color "border"}}">{{error._status_code.title}}</blockquote>
+      </div>
+    </div>
+    {{/each}}
+
+</div>
