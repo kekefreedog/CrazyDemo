@@ -1,15 +1,15 @@
 Front:
     lastBuild:
         files:
-            - runtime.dfada933.js
-            - vendors.dfada933.js
-            - index.dfada933.js
-        hash: dfada933
+            - runtime.6fd46337.js
+            - vendors.6fd46337.js
+            - index.6fd46337.js
+        hash: 6fd46337
         watch: false
-        date: '2024-10-20T21:24:33+00:00'
+        date: '2024-10-29T23:26:35+00:00'
         pages:
-            - Home.dfada933.js
-            - Progressbar.dfada933.js
-            - Form.dfada933.js
-            - Button.dfada933.js
-            - Index.dfada933.js
+            - Form.6fd46337.js
+            - Button.6fd46337.js
+            - Index.6fd46337.js
+            - Home.6fd46337.js
+            - Progressbar.6fd46337.js

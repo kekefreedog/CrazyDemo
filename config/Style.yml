@@ -20,4 +20,4 @@ Style:
     - LoadingScreenBtn: loading-screen-btn
     - RegularBtn: regular-btn
   materialDynamicColors:
-    source: '#4caf50'
+    source: '#f44336'

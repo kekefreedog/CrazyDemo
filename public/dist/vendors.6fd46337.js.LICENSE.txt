@@ -65,6 +65,10 @@
 
 /*! ./waves */
 
+/*! @orchidjs/unicode-variants | https://github.com/orchidjs/unicode-variants | Apache License (v2) */
+
+/*! sifter.js | https://github.com/orchidjs/sifter.js | Apache License (v2) */
+
 /*!*********************!*\
   !*** ./src/tabs.ts ***!
   \*********************/

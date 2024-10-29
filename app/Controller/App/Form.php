@@ -46,6 +46,7 @@ class Form extends Controller {
             ->pushForm(static::DEFAULT_FORM)
             ->pushForm(static::REQUIRED_FORM)
             ->pushForm(static::MULTIPLE_FORM)
+            ->pushForm(static::SELECT_FORM)
             ->render()
         ;
         
@@ -399,6 +400,50 @@ class Form extends Controller {
                 "label"     =>  "Password Input",
                 "disabled"  =>  true,
             ],
+            # Select
+            [
+                "name"      =>  "Disabled select",
+                "type"      =>  "select",
+                "label"     =>  "Disabled Select",
+                "disabled"  =>  true, 
+                "default"   =>  1,
+                "select"    =>  [
+                    [
+                        "label" =>  "Option 1",
+                        "value" =>  1
+                    ],
+                    [
+                        "label" =>  "Option 2",
+                        "value" =>  2
+                    ],
+                    [
+                        "label" =>  "Option 3",
+                        "value" =>  3
+                    ],
+                ],
+            ],
+            # Select
+            [
+                "name"      =>  "Partial Disabled select",
+                "type"      =>  "select",
+                "label"     =>  "Partial Disabled Select",
+                "default"   =>  1,
+                "select"    =>  [
+                    [
+                        "label" =>  "Option 1",
+                        "value" =>  1
+                    ],
+                    [
+                        "label" =>  "Option 2",
+                        "value" =>  2
+                    ],
+                    [
+                        "label" =>  "Option 3",
+                        "value" =>  3,
+                        "disabled"  =>  true, 
+                    ],
+                ],
+            ],
         ]
     ];
 
@@ -652,6 +697,120 @@ class Form extends Controller {
                         "label" =>  "Option 3",
                         "value" =>  3
                     ],
+                ]
+            ],
+/*             # Simple radio
+            [
+                "name"      =>  "multiple_radio_input",
+                "type"      =>  "radio",
+                "label"     =>  "Multiple Radio Input",
+                "multiple"  =>  true,
+                "select"    =>  [
+                    [
+                        "label" =>  "Option 1",
+                        "value" =>  1
+                    ],
+                    [
+                        "label" =>  "Option 2",
+                        "value" =>  2
+                    ],
+                    [
+                        "label" =>  "Option 3",
+                        "value" =>  3
+                    ],
+                ]
+            ], */
+        ]
+    ];
+
+    /** @var array FORM_MULTIPLE */
+    public const SELECT_FORM = [
+        "id"            =>  "select_form",
+        "title"         =>  "Select Form",
+        "entity"        =>  null,
+        "onready"       =>  null,
+        "reset"         =>  true,
+        "items"         =>  [
+            # Simple select
+            [
+                "name"      =>  "simple_select",
+                "type"      =>  "select",
+                "label"     =>  "Simple Select",
+                "select"    =>  [
+                    [
+                        "label" =>  "Title",
+                    ],
+                    [
+                        "label" =>  "Option 1",
+                        "value" =>  1
+                    ],
+                    [
+                        "label" =>  "Option 2",
+                        "value" =>  2
+                    ],
+                    [
+                        "label" =>  "Option 3",
+                        "value" =>  3
+                    ],
+                ],
+            ],
+            # Simple Default select
+            [
+                "name"      =>  "simple_default_select",
+                "type"      =>  "select",
+                "label"     =>  "Simple Default Select",
+                "select"    =>  [
+                    [
+                        "label"     =>  "Option 1",
+                        "value"     =>  1,
+                        "default"   =>  true
+                    ],
+                    [
+                        "label" =>  "Option 2",
+                        "value" =>  2
+                    ],
+                    [
+                        "label" =>  "Option 3",
+                        "value" =>  3
+                    ],
+                ],
+            ],
+            # Alt Default select
+            [
+                "name"      =>  "alt_default_select",
+                "type"      =>  "select",
+                "label"     =>  "Alt Default Select",
+                "default"   =>  2,
+                "select"    =>  [
+                    [
+                        "label"     =>  "Option 1",
+                        "value"     =>  1,
+                    ],
+                    [
+                        "label" =>  "Option 2",
+                        "value" =>  2
+                    ],
+                    [
+                        "label" =>  "Option 3",
+                        "value" =>  3
+                    ],
+                ],
+            ],
+            # Simple tag select
+            [
+                "name"      =>  "simple_tag_select",
+                "type"      =>  "select",
+                "label"     =>  "Simple Tag Select",
+                "default"    =>  [
+                    "Option 1",
+                    "Option 2",
+                    "Option 3",
+                ],
+                "_style"        =>  [
+                    "select"        =>  [
+                        "tag"           =>  true,
+                        "clear"         =>  true,
+                    ]
                 ]
             ],
         ]

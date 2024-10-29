@@ -11,7 +11,7 @@
 /*
  * Fix Icon attach to radio input
  */ 
- input[type="radio"] ~ span i {
+input[type="radio"] ~ span i {
 
     // User select
     user-select: none;
