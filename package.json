@@ -53,6 +53,7 @@
         "email": "kevin.zarshenas@gmail.com"
     },
     "dependencies": {
+        "@simonwep/pickr": "^1.9.1",
         "tom-select": "^2.3.1"
     }
 }

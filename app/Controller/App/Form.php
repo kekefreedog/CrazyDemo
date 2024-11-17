@@ -148,6 +148,12 @@ class Form extends Controller {
                 "type"      =>  "password",
                 "label"     =>  "Password Input",
             ],
+            # Color
+            [
+                "name"      =>  "color_input",
+                "type"      =>  "color",
+                "label"     =>  "Color Input",
+            ],
         ]
     ];
 
@@ -310,6 +316,53 @@ class Form extends Controller {
                     ]   
                 ]
             ],
+            # Color
+            [
+                "name"      =>  "color_input",
+                "type"      =>  "color",
+                "label"     =>  "Color Input Pickr",
+                "_style"        =>  [
+                    "color"        =>  [
+                        "picker"       =>  "pickr",
+                    ]   
+                ]
+            ],
+            # Color Monolith
+            [
+                "name"      =>  "color_input_monolith",
+                "type"      =>  "color",
+                "label"     =>  "Color Input Monolith",
+                "_style"        =>  [
+                    "color"        =>  [
+                        "picker"        =>  "pickr",
+                        "theme"         =>  "monolith"
+                    ]   
+                ]
+            ],
+            # Color Nano
+            [
+                "name"      =>  "color_input_nano",
+                "type"      =>  "color",
+                "label"     =>  "Color Input Nano",
+                "_style"        =>  [
+                    "color"        =>  [
+                        "picker"        =>  "pickr",
+                        "theme"         =>  "nano"
+                    ]   
+                ]
+            ],
+            # Color Opacity
+            [
+                "name"      =>  "color_input_opacity",
+                "type"      =>  "color",
+                "label"     =>  "Color Input Opacity",
+                "_style"        =>  [
+                    "color"        =>  [
+                        "picker"        =>  "pickr",
+                        "opacity"       =>  false
+                    ]   
+                ]
+            ],
         ]
     ];
 
@@ -443,6 +496,13 @@ class Form extends Controller {
                         "disabled"  =>  true, 
                     ],
                 ],
+            ],
+            # Color
+            [
+                "name"      =>  "color_input",
+                "type"      =>  "color",
+                "label"     =>  "Color Input",
+                "disabled"  =>  true, 
             ],
         ]
     ];
@@ -586,6 +646,13 @@ class Form extends Controller {
                 "label"     =>  "Password Input",
                 "default"   =>  "password"
             ],
+            # Color
+            [
+                "name"      =>  "color_input",
+                "type"      =>  "color",
+                "label"     =>  "Color Input",
+                "default"   =>  "#FF0000",
+            ],
         ]
     ];
 
@@ -602,26 +669,28 @@ class Form extends Controller {
                 "name"      =>  "required_text_input",
                 "type"      =>  "text",
                 "label"     =>  "Required Text Input",
-                "required"  =>  true
+                "required"  =>  true,
             ],
             # Required email input
             [
                 "name"      =>  "required_email_input",
                 "type"      =>  "email",
                 "label"     =>  "Required Email Input",
-                "required"  =>  true
+                "required"  =>  true,
             ],
             # Simple checkbox
             [
                 "name"      =>  "checkbox_input",
                 "type"      =>  "checkbox",
                 "label"     =>  "Checkbox Input",
+                "required"  =>  true,
             ],
             # Simple radio
             [
                 "name"      =>  "radio_input",
                 "type"      =>  "radio",
                 "label"     =>  "Radio Input",
+                "required"  =>  true,
                 "select"    =>  [
                     [
                         "label" =>  "Option 1",
@@ -642,30 +711,42 @@ class Form extends Controller {
                 "name"      =>  "switch_input",
                 "type"      =>  "switch",
                 "label"     =>  "Switch Input",
+                "required"  =>  true,
             ],
             # Simple range
             [
                 "name"      =>  "range_input",
                 "type"      =>  "range",
                 "label"     =>  "Range Input",
+                "required"  =>  true,
             ],
             # Simple number
             [
                 "name"      =>  "number_input",
                 "type"      =>  "number",
                 "label"     =>  "Number Input",
+                "required"  =>  true,
             ],
             # Date number
             [
                 "name"      =>  "date_input",
                 "type"      =>  "date",
                 "label"     =>  "Date Input",
+                "required"  =>  true,
             ],
             # Password
             [
                 "name"      =>  "password_input",
                 "type"      =>  "password",
                 "label"     =>  "Password Input",
+                "required"  =>  true,
+            ],
+            # Color
+            [
+                "name"      =>  "color_input",
+                "type"      =>  "color",
+                "label"     =>  "Color Input",
+                "required"  =>  true,
             ],
         ]
     ];

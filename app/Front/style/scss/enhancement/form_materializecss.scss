@@ -98,3 +98,33 @@ div.switch:has(input[type="checkbox"]) {
     border-radius: 5px;
 
 }
+
+/**
+ * Input Color
+ */
+.input-field input[type="color"]:not(.browser-default) {
+
+    // Dimension
+    padding: 0px;
+    border: none;
+    border-radius: 1px;
+
+    // Position
+    margin-top: 10px;
+    margin-left: 1px;
+
+    // cursor
+    cursor: pointer;
+
+}
+
+.input-field input[type="color"]:focus:not([readonly]) {
+
+    // Border bottom
+    border-bottom: 2px solid var(--input-color);
+
+    // Position
+    margin-bottom: 2px;
+
+
+}
