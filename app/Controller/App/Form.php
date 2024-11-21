@@ -47,6 +47,10 @@ class Form extends Controller {
             ->pushForm(static::REQUIRED_FORM)
             ->pushForm(static::MULTIPLE_FORM)
             ->pushForm(static::SELECT_FORM)
+            ->pushForm(static::FORM_NO_CONFIRM)
+            ->pushForm(static::FORM_CONFIRM_TITLE)
+            ->pushForm(static::FORM_CUSTOM_CONFIRM)
+            ->pushForm(static::FORM_CUSTOM_INVERT)
             ->render()
         ;
         
@@ -903,6 +907,92 @@ class Form extends Controller {
                         "clear"         =>  true,
                     ]
                 ]
+            ],
+        ]
+    ];
+
+    /** @var array FORM_SIMPLE */
+    public const FORM_NO_CONFIRM = [
+        "id"            =>  "form_no_confirm",
+        "title"         =>  "Form Without Confirm",
+        "entity"        =>  null,
+        "onready"       =>  null,
+        "reset"         =>  false,
+        "confirm"       =>  false,
+        "items"         =>  [
+            # Simple text input
+            [
+                "name"      =>  "text_input",
+                "type"      =>  "text",
+                "label"     =>  "Text Input"
+            ],
+        ]
+    ];
+
+    /** @var array FORM_SIMPLE */
+    public const FORM_CONFIRM_TITLE = [
+        "id"            =>  "form_confirm_title",
+        "title"         =>  "Form With other Confirm title",
+        "entity"        =>  null,
+        "onready"       =>  null,
+        "reset"         =>  false,
+        "confirm"       =>  "Confirm",
+        "items"         =>  [
+            # Simple text input
+            [
+                "name"      =>  "text_input",
+                "type"      =>  "text",
+                "label"     =>  "Text Input"
+            ],
+        ]
+    ];
+
+    /** @var array FORM_SIMPLE */
+    public const FORM_CUSTOM_CONFIRM = [
+        "id"            =>  "form_custom_confirm",
+        "title"         =>  "Form With Custom Confirm",
+        "entity"        =>  null,
+        "onready"       =>  null,
+        "reset"         =>  false,
+        "confirm"       =>  [
+            "title"         =>  "Custom",
+            "icon"          =>  [
+                "class"         =>  "material-icons",
+                "text"          =>  "place",
+            ],
+            "align"         =>  "center"
+        ],
+        "items"         =>  [
+            # Simple text input
+            [
+                "name"      =>  "text_input",
+                "type"      =>  "text",
+                "label"     =>  "Text Input"
+            ],
+        ]
+    ];
+
+    /** @var array FORM_SIMPLE */
+    public const FORM_CUSTOM_INVERT = [
+        "id"            =>  "form_custom_invert",
+        "title"         =>  "Form with inverted buttons",
+        "entity"        =>  null,
+        "onready"       =>  null,
+        "reset"         =>  true,
+        "confirm"       =>  [
+            "title"         =>  "Save",
+            "icon"          =>  [
+                "class"         =>  "material-icons",
+                "text"          =>  "save",
+            ],
+            "invert"        =>  true
+        ],
+        "items"         =>  [
+            # Simple text input
+            [
+                "name"      =>  "text_input",
+                "type"      =>  "text",
+                "label"     =>  "Text Input"
             ],
         ]
     ];

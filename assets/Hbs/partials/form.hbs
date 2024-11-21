@@ -250,15 +250,15 @@
     {{/each}}
 
     {{!-- Submit --}}
-    <div class="col s12 screen-flex screen-right">
+    <div class="col s12 screen-flex screen-{{#if form.confirm.align}}{{form.confirm.align}}{{else}}left{{/if}}{{#if form.confirm.invert}} screen-direction-x-desc{{/if}}">
         {{!-- Reset Button --}}
-        {{#if form.reset}}<button class="btn waves-effect waves-light right red white-text mr-5" type="reset" {{#if form.onready}}disabled=""{{/if}}>Reset
+        {{#if form.reset}}<button class="btn waves-effect waves-light red white-text m{{#if form.confirm.invert}}l{{else}}r{{/if}}-5" type="reset" {{#if form.onready}}disabled=""{{/if}}>Reset
             <i class="material-icons right">delete_forever</i>
         </button>{{/if}}
         {{!-- Submit button --}}
-        <button class="btn waves-effect waves-light green" type="submit" {{#if form.onready}}disabled=""{{/if}}>Save
-            <i class="material-icons right">save</i>
-        </button>
+        {{#if form.confirm}}<button class="btn waves-effect waves-light green" type="submit" {{#if form.onready}}disabled=""{{/if}}>{{#isString form.confirm}}{{form.confirm}}{{else}}{{#isObject form.confirm}}{{#if form.confirm.title}}{{form.confirm.title}}{{/if}}{{else}}Save{{/isObject}}{{/isString}}
+            {{#isObject form.confirm}}{{#if form.confirm.icon}}<i class="{{form.confirm.icon.class}} right">{{form.confirm.icon.text}}</i>{{/if}}{{else}}<i class="material-icons right">save</i>{{/isObject}}
+        </button>{{/if}}
     </div>
 
 </form>{{/if}}

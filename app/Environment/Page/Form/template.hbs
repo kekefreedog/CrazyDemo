@@ -69,6 +69,30 @@
                     <h5>Select form</h5>
                     {{> form form=@root._ui.forms.select_form}}
                 </div>
+                
+                {{!-- Form Without Confirm --}}
+                <div class="col s6 m6">
+                    <h5>{{@root._ui.forms.form_no_confirm.title}}</h5>
+                    {{> form form=@root._ui.forms.form_no_confirm}}
+                </div>
+                
+                {{!-- Form With other Confirm title --}}
+                <div class="col s6 m6">
+                    <h5>{{@root._ui.forms.form_confirm_title.title}}</h5>
+                    {{> form form=@root._ui.forms.form_confirm_title}}
+                </div>
+                
+                {{!-- Form With Custom Confirm --}}
+                <div class="col s6 m6">
+                    <h5>{{@root._ui.forms.form_custom_confirm.title}}</h5>
+                    {{> form form=@root._ui.forms.form_custom_confirm}}
+                </div>
+                
+                {{!-- Form with inverted buttons --}}
+                <div class="col s6 m6">
+                    <h5>{{@root._ui.forms.form_custom_invert.title}}</h5>
+                    {{> form form=@root._ui.forms.form_custom_invert}}
+                </div>
 
             </div>
 
@@ -77,4 +101,3 @@
     </div>
 
 </div>
-
