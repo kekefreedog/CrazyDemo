@@ -296,6 +296,25 @@ class Form extends Controller {
                     ],
                 ]
             ],
+            # Custom decimal min and max
+            [
+                "name"      =>  "custom_decimal_input_min_max",
+                "type"      =>  "number",
+                "label"     =>  "Custom Decimal Number with Min and Max Input",
+                "select"    =>  [
+                    [
+                        "value" =>  0
+                    ],
+                    [
+                        "value" =>  2
+                    ],
+                ],
+                "_style"        =>  [
+                    "number"         =>  [
+                        "decimal"     =>  2,
+                    ]   
+                ]
+            ],
             # Text input with min and max
             [
                 "name"          =>  "text_input_min_max",
