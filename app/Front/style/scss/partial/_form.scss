@@ -20,3 +20,7 @@
 /* Import pickr */
 @import '@simonwep/pickr/dist/themes/classic.min.css', '@simonwep/pickr/dist/themes/monolith.min.css', '@simonwep/pickr/dist/themes/nano.min.css';
 @import '../enhancement/pickr_materializecss.scss';
+
+/* Import filepond */
+@import 'filepond/dist/filepond.min.css';
+@import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';

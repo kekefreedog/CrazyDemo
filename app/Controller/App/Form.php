@@ -158,6 +158,12 @@ class Form extends Controller {
                 "type"      =>  "color",
                 "label"     =>  "Color Input",
             ],
+            # Simple file input
+            [
+                "name"      =>  "file_input",
+                "type"      =>  "file",
+                "label"     =>  "File Input"
+            ],
         ]
     ];
 
@@ -383,6 +389,29 @@ class Form extends Controller {
                     "color"        =>  [
                         "picker"        =>  "pickr",
                         "opacity"       =>  false
+                    ]   
+                ]
+            ],
+            # Cutom file input
+            [
+                "name"      =>  "custom_file_input",
+                "type"      =>  "file",
+                "label"     =>  "Custom File Input",
+                "_style"        =>  [
+                    "file"          =>  [
+                        "picker"        =>  "filepond",
+                    ]   
+                ]
+            ],
+            # Cutom file input with preview
+            [
+                "name"      =>  "custom_file_input_qith_preview",
+                "type"      =>  "file",
+                "label"     =>  "Custom File Input with Preview",
+                "_style"        =>  [
+                    "file"          =>  [
+                        "picker"        =>  "filepond",
+                        "preview"       =>  true
                     ]   
                 ]
             ],
@@ -833,6 +862,19 @@ class Form extends Controller {
                         "value"     =>  5
                     ],
                 ],
+            ],
+            # Multiple file
+            [
+                "name"      =>  "multiple_file_input",
+                "type"      =>  "file",
+                "label"     =>  "Multiple File Input",
+                "multiple"  =>  true,
+                "_style"        =>  [
+                    "file"          =>  [
+                        "picker"        =>  "filepond",
+                        "preview"       =>  true
+                    ]   
+                ]
             ],
         ]
     ];

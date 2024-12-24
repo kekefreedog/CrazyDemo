@@ -13,16 +13,69 @@
 <form 
     id="{{form.id}}"
     class="row crazy-form g-0"
+    {{!-- Entity --}}
     {{#if form.entity}}entity="{{form.entity}}"{{/if}}
-    {{#if form.onready}}onready="{{form.onready}}"{{/if}} 
+    {{!-- On Ready --}}
+    {{#if form.onready}}onready="{{form.onready}}"{{/if}}
+    {{!-- Url where Post --}}
+    {{#if form.post}}post="{{form.post}}"{{/if}} 
+    {{!-- Declare partial --}}
     partial="form"
 >
     {{!-- Items --}}
     {{#each form.items as |item|}}
     <div class="input-field col s12 mn-2{{#if item._style.customClass.input-field}} {{item._style.customClass.input-field}}{{/if}}" style="margin-bottom: {{#is item.type "range"}}0{{else}}15{{/is}}px;">
         
+        {{!-- File Input --}}
+        {{#is item.type "file"}} 
+        {{#if item.disabled}}<div class="suffix"><i class="material-icons">lock</i></div>{{else}}
+        {{#if item._style.suffix}}<div class="suffix"><i class="{{item._style.suffix.class}}">{{item._style.suffix.text}}</i></div>{{/if}}{{/if}}
+        {{#if item._style.prefix}}<div class="prefix"><i class="{{item._style.prefix.class}}">{{item._style.prefix.text}}</i></div>{{/if}}
+            {{!-- Filepond --}}
+            {{#is item._style.file.picker "filepond"}}
+                <input 
+                    id="{{../form.id}}_{{item.name}}" 
+                    name="{{item.name}}{{#if item.multiple}}[]{{/if}}"
+                    {{#if item._style.file.preview}}data-file-preview=""{{/if}}
+                    {{#if item.multiple}}multiple=""{{/if}}
+                    {{#if item._style.customClass.input}}class="{{item._style.customClass.input}}"{{/if}}
+                    {{#if item.disabled}}disabled=""{{else}}{{#if ../form.onready}}disabled="loading"{{/if}}{{/if}}
+                    type="file"
+                    {{#if item.placeholder}}placeholder="{{item.placeholder}}"{{else}}placeholder=" "{{/if}}
+                    {{#if item.readonly}}readonly=""{{/if}}
+                    {{#if item.default}}value="{{item.default}}" default="{{item.default}}"{{/if}}
+                    {{#if item.select.[0].value}}min="{{item.select.[0].value}}"{{/if}}
+                    {{#if item.select.[1].value}}max="{{item.select.[1].value}}"{{/if}}
+                    {{#if item.required}}required=""{{/if}}
+                    class="filepond"
+                >
+                {{#if item.label}}<label for="{{../form.id}}_{{item.name}}">{{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}</label>{{/if}}
+            {{!-- Legacy file input --}}
+            {{else}}<div class="file-field">
+                <div class="btn">
+                    <span>{{#if item.label}}{{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}{{/if}}</span>
+                    <input
+                        id="{{../form.id}}_{{item.name}}"
+                        {{#if item.multiple}}multiple=""{{/if}}
+                        name="{{item.name}}{{#if item.multiple}}[]{{/if}}"
+                        {{#if item._style.customClass.input}}class="{{item._style.customClass.input}}"{{/if}}
+                        {{#if item.disabled}}disabled=""{{else}}{{#if ../form.onready}}disabled="loading"{{/if}}{{/if}}
+                        type="file"
+                        {{#if item.placeholder}}placeholder="{{item.placeholder}}"{{else}}placeholder=" "{{/if}}
+                        {{#if item.readonly}}readonly=""{{/if}}
+                        {{#if item.default}}value="{{item.default}}" default="{{item.default}}"{{/if}}
+                        {{#if item.select.[0].value}}min="{{item.select.[0].value}}"{{/if}}
+                        {{#if item.select.[1].value}}max="{{item.select.[1].value}}"{{/if}}
+                        {{#if item.required}}required=""{{/if}}
+                    >
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>{{/is}}
+
         {{!-- Color Input --}}
-        {{#is item.type "color"}} 
+        {{else}}{{#is item.type "color"}} 
         {{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}<br>
         {{#if item.disabled}}<div class="suffix"><i class="material-icons">lock</i></div>{{else}}
         {{#if item._style.suffix}}<div class="suffix"><i class="{{item._style.suffix.class}}">{{item._style.suffix.text}}</i></div>{{/if}}{{/if}}
@@ -41,7 +94,7 @@
             {{!-- data-type="color" --}}
             {{#if item.placeholder}}placeholder="{{item.placeholder}}"{{else}}placeholder=" "{{/if}}
             {{#if item.readonly}}readonly=""{{/if}}
-            {{#if item.default includeZero=false}}value="{{item.default}}" default="{{item.default}}"{{/if}}
+            {{#if item.default includeZero=false}}value="{{#is item.default "randomHex()"}}{{colorHexRandom}}{{else}}{{item.default}}{{/is}}" default="{{item.default}}"{{/if}}
             {{#if item.select.[0].value includeZero=false}}min="{{item.select.[0].value}}"{{/if}}
             {{#if item.select.[1].value includeZero=false}}max="{{item.select.[1].value}}"{{/if}}
             {{#if item.required}}required=""{{/if}}
@@ -64,14 +117,15 @@
             autocomplete="off"
             {{#if item.placeholder}}placeholder="{{item.placeholder}}"{{/if}}
             {{#if item.disabled}}disabled=""{{else}}{{#if ../form.onready}}disabled="loading"{{/if}}{{/if}}
-        {{#if item._style.select.tag}}/>{{else}}>{{#if item.select}}
+            {{#if item.select.url}}data-select-remote="{{JSONstringify item.select}}"{{/if}}
+        {{#if item._style.select.tag}}/>{{else}}>{{#if item.select}}{{#if item.select.url}}{{else}}
             {{#each item.select as |option|}}<option
                 {{#if option.value includeZero=false}}value="{{option.value}}"{{/if}}
                 {{#if item.default includeZero=false}}{{#is item.default option.value}}selected=""{{/is}}{{else}}{{#if option.default}}selected=""{{/if}}{{/if}}
                 {{#if option.default}}default=""{{/if}}
                 {{#if option.disabled}}disabled=""{{/if}}
             >{{option.label}}</option>{{/each}}
-        {{/if}}</select>{{/if}}
+        {{/if}}{{/if}}</select>{{/if}}
 
         {{!-- Password Input --}}
         {{else}}{{#is item.type "password"}}
@@ -135,6 +189,7 @@
             {{#if item._style.number.decimal}}
             step=".01" inputmode="numeric"{{else}}
             data-maska="N" data-maska-tokens="N:[0-9]:multiple" inputmode="numeric"{{/if}}
+
         >
         {{#if item.label}}<label for="{{../form.id}}_{{item.name}}">{{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}</label>{{/if}}
 
@@ -246,7 +301,7 @@
             {{#if item._style.text.maxlength includeZero=false}}maxlength="{{item._style.text.maxlength}}"{{/if}}
         >
         {{#if item.label}}<label for="{{../form.id}}_{{item.name}}">{{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}</label>{{/if}}
-        {{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
+        {{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
 
     </div>
     {{/each}}
