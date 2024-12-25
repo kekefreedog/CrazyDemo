@@ -1,15 +1,15 @@
 Front:
     lastBuild:
         files:
-            - runtime.a390010f.js
-            - index.a390010f.js
-            - vendors.a390010f.js
-        hash: a390010f
+            - runtime.238f8d3d.js
+            - vendors.238f8d3d.js
+            - index.238f8d3d.js
+        hash: 238f8d3d
         watch: false
-        date: '2024-12-25T16:45:04+00:00'
+        date: '2024-12-25T23:21:18+00:00'
         pages:
-            - Progressbar.a390010f.js
-            - Home.a390010f.js
-            - Button.a390010f.js
-            - Form.a390010f.js
-            - Index.a390010f.js
+            - Progressbar.238f8d3d.js
+            - Home.238f8d3d.js
+            - Button.238f8d3d.js
+            - Form.238f8d3d.js
+            - Index.238f8d3d.js

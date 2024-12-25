@@ -448,7 +448,7 @@ class Form extends Controller {
                 "label"     =>  "Custom Lang File Input",
                 "_style"        =>  [
                     "file"          =>  [
-                        "picker"            =>  "filepond",
+                        "picker"        =>  "filepond",
                         "locale"        =>  "fr-fr",
                     ]   
                 ]
