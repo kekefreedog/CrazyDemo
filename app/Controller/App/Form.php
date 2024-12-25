@@ -405,13 +405,51 @@ class Form extends Controller {
             ],
             # Cutom file input with preview
             [
-                "name"      =>  "custom_file_input_qith_preview",
+                "name"      =>  "custom_file_input_with_preview",
                 "type"      =>  "file",
                 "label"     =>  "Custom File Input with Preview",
                 "_style"        =>  [
                     "file"          =>  [
                         "picker"        =>  "filepond",
-                        "preview"       =>  true
+                        "preview"       =>  true,
+                    ]   
+                ]
+            ],
+            # Cutom max file input
+            [
+                "name"      =>  "custom_max_file_input",
+                "type"      =>  "file",
+                "label"     =>  "Custom Max File Input",
+                "multiple"  =>  true,
+                "_style"        =>  [
+                    "file"          =>  [
+                        "picker"        =>  "filepond",
+                        "maxFiles"      =>  3,
+                    ]   
+                ]
+            ],
+            # Cutom accept file input
+            [
+                "name"      =>  "custom_accept_file_input",
+                "type"      =>  "file",
+                "label"     =>  "Custom Accept File Input",
+                "multiple"  =>  true,
+                "_style"        =>  [
+                    "file"          =>  [
+                        "picker"            =>  "filepond",
+                        "acceptedFileTypes" =>  ['image/*'],
+                    ]   
+                ]
+            ],
+            # Cutom lang file input
+            [
+                "name"      =>  "custom_lang_file_input",
+                "type"      =>  "file",
+                "label"     =>  "Custom Lang File Input",
+                "_style"        =>  [
+                    "file"          =>  [
+                        "picker"            =>  "filepond",
+                        "locale"        =>  "fr-fr",
                     ]   
                 ]
             ],
@@ -555,6 +593,19 @@ class Form extends Controller {
                 "type"      =>  "color",
                 "label"     =>  "Color Input",
                 "disabled"  =>  true, 
+            ],
+            # File
+            [
+                "name"      =>  "disabled_file_input",
+                "type"      =>  "file",
+                "label"     =>  "File Input Disabled",
+                "disabled"  =>  true, 
+                "_style"        =>  [
+                    "file"          =>  [
+                        "picker"        =>  "filepond",
+                        "preview"       =>  true
+                    ]   
+                ]
             ],
         ]
     ];
@@ -799,6 +850,19 @@ class Form extends Controller {
                 "type"      =>  "color",
                 "label"     =>  "Color Input",
                 "required"  =>  true,
+            ],
+            # File
+            [
+                "name"      =>  "required_file_input",
+                "type"      =>  "file",
+                "label"     =>  "Required File Input",
+                "required"  =>  true,
+                "_style"        =>  [
+                    "file"          =>  [
+                        "picker"        =>  "filepond",
+                        "preview"       =>  true
+                    ]   
+                ]
             ],
         ]
     ];
