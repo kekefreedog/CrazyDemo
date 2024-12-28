@@ -51,6 +51,7 @@ class Form extends Controller {
             ->pushForm(static::FORM_CONFIRM_TITLE)
             ->pushForm(static::FORM_CUSTOM_CONFIRM)
             ->pushForm(static::FORM_CUSTOM_INVERT)
+            ->pushForm(static::FORM_DEPENDS)
             ->render()
         ;
         
@@ -1119,6 +1120,33 @@ class Form extends Controller {
                 "type"      =>  "text",
                 "label"     =>  "Text Input"
             ],
+        ]
+    ];
+
+    /** @var array FORM_SIMPLE */
+    public const FORM_DEPENDS = [
+        "id"            =>  "form_with_depends",
+        "title"         =>  "Form with depends",
+        "entity"        =>  null,
+        "onready"       =>  null,
+        "reset"         =>  false,
+        "confirm"       =>  false,
+        "items"         =>  [
+            # Depends
+            [
+                "name"      =>  "checkbox_parent",
+                "type"      =>  "switch",
+                "label"     =>  "Checkbox parent",
+                "default"   =>  true,
+            ],
+            # Depending
+            [
+                "name"      =>  "checkbox_children",
+                "type"      =>  "switch",
+                "label"     =>  "Checkbox child",
+                "default"   =>  true,
+                "depends"   =>  "checkbox_parent" // Can be an array
+            ]
         ]
     ];
 

@@ -228,6 +228,7 @@
                 {{#if item._style.customClass.input}}class="{{item._style.customClass.input}}"{{/if}}
                 {{#if item.disabled}}disabled=""{{else}}{{#if radioItem.disabled}}disabled=""{{else}}disabled="loading"{{/if}}{{/if}}
                 {{#if item.default}}checked="" default="true"{{/if}}
+                {{#if item.depends}}data-depends="{{#isArray item.depends}}{{join "," item.depends}}{{else}}{{item.depends}}{{/isArray}}" default="true"{{/if}}
             >
             <span class="lever"></span>
             On
