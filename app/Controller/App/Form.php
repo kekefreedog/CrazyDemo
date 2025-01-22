@@ -454,6 +454,18 @@ class Form extends Controller {
                     ]   
                 ]
             ],
+            # Date Easepick
+            [
+                "name"      =>  "date_input_easepick",
+                "type"      =>  "date",
+                "label"     =>  "Easepick Input",
+                "_style"    =>  [
+                    "date"      =>  [
+                        "picker"    =>  "easepick",
+                        "lang"      =>  "fr-FR"
+                    ]
+                ]
+            ],
         ]
     ];
 

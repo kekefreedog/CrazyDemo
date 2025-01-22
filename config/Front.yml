@@ -1,15 +1,15 @@
 Front:
     lastBuild:
         files:
-            - runtime.41de2921.js
-            - vendors.41de2921.js
-            - index.41de2921.js
-        hash: 41de2921
+            - index.b56744d1.js
+            - vendors.b56744d1.js
+            - runtime.b56744d1.js
+        hash: b56744d1
         watch: false
-        date: '2024-12-28T19:27:54+00:00'
+        date: '2025-01-22T23:33:11+00:00'
         pages:
-            - Button.41de2921.js
-            - Form.41de2921.js
-            - Index.41de2921.js
-            - Progressbar.41de2921.js
-            - Home.41de2921.js
+            - Progressbar.b56744d1.js
+            - Home.b56744d1.js
+            - Index.b56744d1.js
+            - Button.b56744d1.js
+            - Form.b56744d1.js
