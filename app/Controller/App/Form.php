@@ -466,6 +466,19 @@ class Form extends Controller {
                     ]
                 ]
             ],
+            # Date Range
+            [
+                "name"      =>  "date_input_easepick_range",
+                "type"      =>  "date",
+                "label"     =>  "Easepick Input Range (multiple)",
+                "multiple"  =>  true,
+                "_style"    =>  [
+                    "date"      =>  [
+                        "picker"    =>  "easepick",
+                        "lang"      =>  "fr-FR"
+                    ]
+                ]
+            ],
         ]
     ];
 
