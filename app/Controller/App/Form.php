@@ -357,6 +357,18 @@ class Form extends Controller {
                     ]   
                 ]
             ],
+            # Color french
+            [
+                "name"      =>  "color_input_french",
+                "type"      =>  "color",
+                "label"     =>  "Color Input Pickr French",
+                "_style"        =>  [
+                    "color"        =>  [
+                        "picker"        =>  "pickr",
+                        "locale"        =>  "fr-fr",
+                    ]   
+                ]
+            ],
             # Color Monolith
             [
                 "name"      =>  "color_input_monolith",
