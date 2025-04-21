@@ -47,13 +47,13 @@ let globalComponentsCollection = {
  */
 import PreloaderLinearIndeterminate from "../Environment/Partials/PreloaderLinearIndeterminate";
 import Navigation from "../Environment/Partials/Navigation";
-import hello from "../Environment/Partials/Hello";
+import Hello from "../Environment/Partials/Hello";
 import Form from "../Environment/Partials/Form";
 let globalPartials = {
    "preloader_linear_indeterminate": PreloaderLinearIndeterminate,
    "navigation": Navigation,
-   "hello": hello,
-   "form": Form,
+   "hello": Hello,
+   "form": Form
 };
 
 /** Actions
