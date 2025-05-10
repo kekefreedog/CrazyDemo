@@ -1,0 +1,56 @@
+{{!-- Root --}}
+<div id="crazy-root" descriptive-id="" class="screen-fit-min-y screen-flex screen-center dark-mode-blue-grey darken-4-dark-mode light-mode-white">
+
+    {{> preloader_linear_indeterminate}}
+
+    {{> navigation}}
+
+    {{!-- Body --}}
+    <div id="crazy-content" descriptive-id="" class="element-flex-grow-1 pb-5">
+
+        <div class="row container">
+
+            <div class="col s12 m10 row">
+
+                {{!-- Title --}}
+                <div class="col s12">
+                    <h1>Crazy Request</h1>
+                </div>
+
+                {{!-- Container --}}
+                <div class="col s12 container">
+
+                    <blockquote>
+
+                        {{!-- Send message Json --}}
+                        <regular-btn id="send-message-json" class="mb-3 ml-3 mt-3" label="Send Message Pack" color-primary="blue" size="large" depth="1" shape="box" icon-text="send" type="floating"></regular-btn>
+                        
+                        {{!-- Message --}}
+                        <p>Test Json Message</p>
+
+                    </blockquote>
+
+                </div>
+
+                {{!-- Container --}}
+                <div class="col s12 container">
+
+                    <blockquote>
+
+                        {{!-- Send message pack --}}
+                        <regular-btn id="send-message-pack" class="mb-3 ml-3 mt-3" label="Send Message Pack" color-primary="blue" size="large" depth="1" shape="box" icon-text="send" type="floating"></regular-btn>
+                        
+                        {{!-- Message --}}
+                        <p>Test Message Pack Message</p>
+
+                    </blockquote>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

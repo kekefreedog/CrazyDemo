@@ -49,6 +49,13 @@ Router:
             patterns:
                 - /progressbar
             controller: App\Controller\App\Progressbar
+        -
+            name: Request
+            methods:
+                - get
+            patterns:
+                - /request
+            controller: App\Controller\App\Request
     api:
         -
             name: Config
@@ -59,6 +66,14 @@ Router:
                 - '/v1/config/[s:name]/[a:parameter]'
             methods:
                 - get
+        -
+            name: Messagepack
+            methods:
+                - post
+                - put
+            patterns:
+                - /messagepack
+            controller: App\Controller\Api\v1\Messagepack
     asset:
         -
             name: Favicon
