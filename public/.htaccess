@@ -16,6 +16,9 @@
 # Timezone
 # php_value date.timezone 'Europe/Paris'
 
+# Add mime type
+AddType application/x-msgpack .msgpack
+
 # Enable rewrite
 RewriteEngine on
 
