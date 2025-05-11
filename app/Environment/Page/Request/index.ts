@@ -13,7 +13,8 @@
  */
 const css = require("!!css-loader!sass-loader!./style.scss");
 const html = require("./template.hbs");
-import {Crazypage, Crazyrequest} from "crazyphp";
+import { M } from "@materializecss/materialize";
+import {Crazypage, Crazyrequest, UtilityObjects} from "crazyphp";
 require("./style.scss");
 
 /**
@@ -145,7 +146,7 @@ export default class Request extends Crazypage {
             )
 
             // Send request
-            request.fetch(object);
+            request.fetch(object).then(this._thenSendMessage);
 
         }
 
@@ -178,9 +179,33 @@ export default class Request extends Crazypage {
             )
 
             // Send request
-            request.fetch(object);
+            request.fetch(object).then(this._thenSendMessage);
 
         }
+
+    }
+
+    /** Private methods | Then
+     ******************************************************
+     */
+
+    /**
+     * Then Send Message
+     * 
+     * @param value 
+     */
+    private _thenSendMessage = (value:any):void => {
+
+        // Check result
+        if(typeof value.results === "object" && UtilityObjects.equal(this.MESSAGE, value.results))
+
+            // Message 
+            M.toast({text: 'The request has been sent successfully !  ✅'})
+
+        else
+
+            // Message 
+            M.toast({text: 'The request has not been sent successfully !  ❌'})
 
     }
 

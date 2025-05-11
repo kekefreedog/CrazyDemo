@@ -15,8 +15,10 @@ namespace App\Controller\Api\v1;
 /**
  * Dependances
  */
+use CrazyPHP\Library\File\File as FileFile;
 use CrazyPHP\Core\ApiResponse;
 use CrazyPHP\Core\Controller;
+use CrazyPHP\Core\File;
 
  /**
  * Messagepack
@@ -40,9 +42,13 @@ class Messagepack extends Controller {
         # Get request data
         $requestData = static::getHttpRequestData();
 
+        # Get content type
+        $contentType = array_flip(FileFile::EXTENSION_TO_MIMETYPE)[static::getHeaderFromRequest("Content-Type") ?: false ?? false] ?? "json";
+
         # Set response
         (new ApiResponse())
             ->setStatusCode($statutCode)
+            ->setContentType($contentType)
             ->pushContent("results", $requestData)
             ->send();
 
