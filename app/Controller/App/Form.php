@@ -491,6 +491,85 @@ class Form extends Controller {
                     ]
                 ]
             ],
+            # Date Air Datepicker
+            [
+                "name"      =>  "date_input_airdatepicker",
+                "type"      =>  "date",
+                "label"     =>  "Air Date Picker Input",
+                "_style"    =>  [
+                    "date"      =>  [
+                        "picker"    =>  "airdatepicker",
+                        "lang"      =>  "fr-FR"
+                    ]
+                ]
+            ],
+            # Date Range
+            [
+                "name"      =>  "date_input_airdatepicker_range",
+                "type"      =>  "date",
+                "label"     =>  "Air Date Picker Input Range (multiple)",
+                "multiple"  =>  true,
+                "_style"    =>  [
+                    "date"      =>  [
+                        "picker"    =>  "airdatepicker",
+                        "lang"      =>  "fr-FR"
+                    ]
+                ]
+            ],
+            # Date Min & Max
+            [
+                "name"      =>  "date_input_airdatepicker_min_max",
+                "type"      =>  "date",
+                "label"     =>  "Air Date Picker Input Min & Max",
+                "_style"    =>  [
+                    "date"      =>  [
+                        "picker"    =>  "airdatepicker",
+                        "lang"      =>  "fr-FR"
+                    ]
+                ],
+                "select"    =>  [
+                    [
+                        "value"     =>  "2025-07-12",
+                    ],
+                    [
+                        "value"     =>  "2025-07-14",
+                    ]
+                ]
+            ],
+            # Date Min
+            [
+                "name"      =>  "date_input_airdatepicker_min",
+                "type"      =>  "date",
+                "label"     =>  "Air Date Picker Input Min",
+                "_style"    =>  [
+                    "date"      =>  [
+                        "picker"    =>  "airdatepicker",
+                        "lang"      =>  "fr-FR"
+                    ]
+                ],
+                "select"    =>  [
+                    [
+                        "value"     =>  "2025-07-12",
+                    ],
+                ]
+            ],
+            # Date Max
+            [
+                "name"      =>  "date_input_airdatepicker_max",
+                "type"      =>  "date",
+                "label"     =>  "Air Date Picker Input Max",
+                "_style"    =>  [
+                    "date"      =>  [
+                        "picker"    =>  "airdatepicker",
+                        "lang"      =>  "fr-FR"
+                    ]
+                ],
+                "select"    =>  [
+                    1 => [
+                        "value"     =>  "2025-07-12",
+                    ],
+                ]
+            ],
         ]
     ];
 

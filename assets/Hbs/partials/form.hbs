@@ -111,6 +111,7 @@
 
         {{!-- Select Input --}}
         {{else}}{{#is item.type "select"}}
+        <div id="dependency" class="suffix suffix-tomselect hide"><i class="material-icons">link_off</i></div>
         {{#if item.disabled}}<div class="suffix suffix-tomselect"><i class="material-icons">lock</i></div>{{else}}
         {{#if item._style.suffix}}<div class="suffix suffix-tomselect"><i class="{{item._style.suffix.class}}">{{item._style.suffix.text}}</i></div>{{/if}}{{/if}}
         {{#if item.label}}{{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}{{/if}}
@@ -130,6 +131,7 @@
             {{#if item.select.url}}data-select-remote="{{JSONstringify item.select}}"{{/if}}
             {{#if item.valuePrefix}}data-form-value-prefix="{{item.valuePrefix}}"{{/if}}
             {{#if item.valueSuffix}}data-form-value-suffix="{{item.valueSuffix}}"{{/if}}
+            {{#if item.depends}}data-depends="{{#isArray item.depends}}{{join item.depends ","}}{{else}}{{item.depends}}{{/isArray}}" default="true"{{/if}}
         {{#if item._style.select.tag}}/>{{else}}>{{#if item.select}}{{#if item.select.url}}{{else}}
             {{!-- Iteration options --}}
             {{#each item.select as |option|}}<option
@@ -174,16 +176,20 @@
             {{#if item.multiple}}multiple=""{{/if}}
             {{#if item._style.customClass.input}}class="{{item._style.customClass.input}}"{{/if}}
             {{#if item.disabled}}disabled=""{{else}}{{#if ../form.onready}}disabled="loading"{{/if}}{{/if}}
-            type="{{#is item._style.date.picker "easepick"}}text{{else}}date{{/is}}"
+            type="{{#is item._style.date.picker "easepick"}}text{{else}}{{#is item._style.date.picker "airdatepicker"}}text{{else}}date{{/is}}{{/is}}"
             {{#is item._style.date.picker "easepick"}}data-type="date"{{/is}}
+            {{#is item._style.date.picker "airdatepicker"}}data-type="date"{{/is}}
             {{#if item.placeholder}}placeholder="{{item.placeholder}}"{{else}}placeholder=" "{{/if}}
             {{#if item.readonly}}readonly=""{{/if}}
             {{#unless form.onready}}{{#if item.default}}value="{{item.default}}" default="{{item.default}}"{{/if}}{{/unless}}
             {{#if item.select.[0].value}}min="{{item.select.[0].value}}"{{/if}}
             {{#if item.select.[1].value}}max="{{item.select.[1].value}}"{{/if}}
             {{#if item.required}}required=""{{/if}}
+            {{#if item._style.date.picker}}data-date-picker="{{item._style.date.picker}}"{{/if}}
             {{!-- Easepick --}}
-            {{#if item._style.date.picker}}data-date-picker="easepick"{{/if}}
+            {{#if item._style.date.format}}data-date-format="{{item._style.date.format}}"{{/if}}
+            {{#if item._style.date.lang}}data-date-lang="{{item._style.date.lang}}"{{/if}}
+            {{!-- Air Date Picker --}}
             {{#if item._style.date.format}}data-date-format="{{item._style.date.format}}"{{/if}}
             {{#if item._style.date.lang}}data-date-lang="{{item._style.date.lang}}"{{/if}}
         >
@@ -233,6 +239,7 @@
         {{else}}{{#is item.type "switch"}}
         {{#if item.label}}{{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}{{/if}}
         <div class="switch{{#if item.label}}  mt-4{{/if}}"><label>
+            <div id="dependency" class="suffix hide"><i class="material-icons">link_off</i></div>
             {{#if item.disabled}}<div class="suffix"><i class="material-icons">lock</i></div>{{/if}}
             Off
             <input
@@ -288,6 +295,7 @@
 
         {{!-- Checkbox Input --}}
         {{else}}{{#is item.type "checkbox"}}
+        <div id="dependency" class="suffix hide"><i class="material-icons">link_off</i></div>
         <p><label>
             {{#if item.disabled}}<div class="suffix"><i class="material-icons">lock</i></div>{{/if}}
             <input 
@@ -300,6 +308,15 @@
             />
             {{#if item.label}}<span>{{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}</span>{{/if}}
         </label></p>
+
+        {{!-- Hidden Input --}}
+        {{else}}{{#is item.type "hidden"}}
+        <input
+            id="{{../form.id}}_{{item.name}}" 
+            name="{{item.name}}"
+            type="hidden"
+            {{#unless form.onready}}{{#if item.default}}value="{{item.default}}" default="{{item.default}}"{{/if}}{{/unless}}
+        >
         {{else}}
 
         {{!-- Text Input --}}
@@ -320,7 +337,7 @@
             {{#if item._style.text.maxlength includeZero=false}}maxlength="{{item._style.text.maxlength}}"{{/if}}
         >
         {{#if item.label}}<label for="{{../form.id}}_{{item.name}}">{{#if item.required}}<b>{{/if}}{{item.label}}{{#if item.required}}</b>*{{/if}}</label>{{/if}}
-        {{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
+        {{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
 
     </div>
     {{/each}}
