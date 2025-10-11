@@ -56,6 +56,13 @@ Router:
             patterns:
                 - /request
             controller: App\Controller\App\Request
+        -
+            name: Filter
+            methods:
+                - get
+            patterns:
+                - /filter
+            controller: App\Controller\App\Filter
     api:
         -
             name: Config
