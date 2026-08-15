@@ -62,7 +62,7 @@ export default class Form extends Crazypartial {
      */
     public getFormData = () => {
 
-        console.log("dev");
+        console.log("- dev -");
         console.log(this._form);
 
     }
